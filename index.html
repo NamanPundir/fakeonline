@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Online Shopping</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { background: #333; color: #fff; padding: 15px; text-align: center; }
+    nav a { margin: 0 10px; color: #fff; text-decoration: none; }
+    .discount-banner {
+      background-color: #ff4757;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      animation: slideIn 0.8s ease;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .content { padding: 20px; }
+    .products { display: flex; gap: 20px; flex-wrap: wrap; }
+    .product {
+      border: 1px solid #ddd;
+      padding: 10px;
+      width: 200px;
+      text-align: center;
+    }
+    .product img { width: 100%; height: 150px; object-fit: cover; }
+    footer { background: #f1f1f1; padding: 10px; text-align: center; margin-top: 30px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ClickCart</h1>
+    <nav>
+      <a href="./login/login.html">Login</a>
+      <a href="./login/register.html">Register</a>
+      <a href="./add to cart/cart.html">Cart</a>
+      <a href="./add to cart/products.html">Track Orders</a>
+      <a href="./become_supplier/become_supplier.html">Become a Supplier</a>
+    </nav>
+  </header>
+
+  <div class="discount-banner" id="discountBanner">
+    <span id="discountText">Big Sale! 20% off all electronics — this week only!</span>
+  </div>
+
+  <div class="content">
+    <h2>Featured Products</h2>
+    <div class="products">
+      <div class="product">
+        <img src="images/laptop.jpg" alt="Laptop">
+        <p>Smart Laptop</p>
+        <strong>$799</strong>
+        <form method="POST" action="./add to cart/cart.php">
+          <input type="hidden" name="product_id" value="1">
+          <input type="hidden" name="product_name" value="Smart Laptop">
+          <input type="hidden" name="product_price" value="799">
+          <button type="submit" name="add_to_cart">Add to Cart</button>
+        </form>
+      </div>
+      <div class="product">
+        <img src="images/headphones.jpg" alt="Headphones">
+        <p>Noise-Cancelling Headphones</p>
+        <strong>$199</strong>
+      </div>
+      <div class="product">
+        <img src="images/shoes.jpg" alt="Shoes">
+        <p>Running Shoes</p>
+        <strong>$99</strong>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 ClickCart.
+  </footer>
+
+  <script>
+    const messages = [
+      "Big Sale! 20% off all electronics — this week only!",
+      "Free shipping on orders over $50!",
+      "Buy 1 Get 1 Free — limited time only!",
+      "Join as a supplier and grow your business!"
+    ];
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % messages.length;
+      document.getElementById("discountText").textContent = messages[index];
+    }, 4000);
+  </script>
+
+</body>
+</html>

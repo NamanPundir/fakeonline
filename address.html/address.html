@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shipping Address</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h2>Enter Shipping Address</h2>
+  <form action="./save_address.php" method="POST">
+    <input type="text" name="full_name" placeholder="Full Name" required><br>
+    <input type="text" name="phone" placeholder="Phone Number" required><br>
+    <input type="text" name="address_line1" placeholder="Address Line 1" required><br>
+    <input type="text" name="address_line2" placeholder="Address Line 2"><br>
+    <input type="text" name="city" placeholder="City" required><br>
+    <input type="text" name="state" placeholder="State" required><br>
+    <input type="text" name="postal_code" placeholder="Postal Code" required><br>
+    <input type="text" name="country" placeholder="Country" required><br>
+    <button type="submit">Save Address</button>
+  </form>
+</body>
+</html>
